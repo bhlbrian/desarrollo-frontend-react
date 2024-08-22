@@ -1,5 +1,8 @@
+import { useEffect } from "react"
 import ProductCategory from "./ProductCategory"
 import ProductRow from "./ProductRow"
+import { useSelector, useDispatch } from "react-redux"
+import { seProduct } from "../../../redux/product/productsActions"
 
 const product = [
     { category: "Fruits", price: "$1", stocked: true, name: "Apple" },
@@ -11,6 +14,14 @@ const product = [
 ]
 
 const ProductTable = ({ filterText, inStockOnly}) => {
+    const dispatch = useDispatch()
+    useEffect(() => {
+      dispatch(seProduct(product))
+    },[])
+
+    const producto = useSelector((state) => state.product)
+    console.log(producto)
+    
     const rows = [];
     let lastCategory = null;
   
