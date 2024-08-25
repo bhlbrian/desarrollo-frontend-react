@@ -8,11 +8,13 @@ import { Provider } from'react-redux';
 import { RouterProvider } from 'react-router-dom'
 import routes from './router/router';
 
+const basename = process.env.NODE_ENV === 'production' ? '/desarrollo-frontend-react' : '/';
+
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
     <Provider store={store}>
-      <RouterProvider router={routes}/> 
+      <RouterProvider router={routes} basename={basename}/> 
     </Provider>
   </React.StrictMode>
 );

@@ -1,4 +1,4 @@
-import { createBrowserRouter } from "react-router-dom";
+import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import Default from "../page/default/Default";
 import Product from "../page/product/Product";
 import Formulario from "../page/forms/LoginForms";
@@ -35,6 +35,7 @@ const routes = createBrowserRouter([
     basename: basename,
     }
 )
+
 
 
 export default routes;
