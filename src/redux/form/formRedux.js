@@ -3,7 +3,8 @@ import { SET_FORM } from './formTypes'
 const initialState = {
     formData: {
         userName: '',
-        password: '',
+        email: '',
+        password: 'mod7ReactUSIP',
     }
 }
 

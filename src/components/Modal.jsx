@@ -1,7 +1,7 @@
 import { motion } from "framer-motion"
 
-const ModalInfo = ({ visible, message, onClose }) => {
-    
+const ModalInfo = ({ visible, message, onClose, session, onChange, color, colorText }) => {
+
     if (!visible) return null
     return (
         <div className="modal-overlay">
@@ -10,16 +10,24 @@ const ModalInfo = ({ visible, message, onClose }) => {
                 initial={{ opacity: 0, scale: 0.5 }}
                 animate={{ opacity: 1, scale: 1 }}
                 transition={{ duration: 0.5 }}
+                style={{backgroundColor: color, color: colorText}}
             >
-            <div>
-            <h2>Modal con información de {message}</h2>
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed egestas, ipsum at faucibus consectetur, justo urna vulputate ex, at volutpat neque ligula at metus. Nulla facilisi. Sed vel orci et ipsum faucibus condimentum.</p>
-            </div>
-            <button 
-            className="close-btn-success" 
-            onClick={onClose}>X</button>
+                {session &&
+                    <div>
+                        <p>{message}
+                            <button type="button" style={{ marginLeft: '10px' }} onClick={onChange}>Presionar para salir</button>
+                        </p>
+                    </div>
+                }
+                {!session &&
+                    <div>
+                        <h3>{message}</h3>
+                    </div>
+                }
+                <button
+                    className="close-btn-success"
+                    onClick={onClose}>X</button>
             </motion.div>
-        
         </div>
     )
 

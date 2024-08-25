@@ -130,11 +130,10 @@ form div input {
 	z-index: 1000;
   }
 
-  .notification-success {
-    background-color: #efd6bd;
-    color: #cc8259;
+.notification-success {
+    background-color: #e65146;
+    color: #fff;
     padding: 2rem;
-    border: 1px solid #cc8259;
     border-radius: 0.5rem;
     max-width: 500px;
     width: 90%;
@@ -142,7 +141,7 @@ form div input {
     position: relative;
   }
   
-  .close-btn-success {
+.close-btn-success {
     position: absolute;
     top: 0.5rem;
     right: 0.5rem;
@@ -152,4 +151,67 @@ form div input {
     font-size: 1.5rem;
     cursor: pointer;
   }
+.nav-item-right {
+    margin-left: auto;
+}
 
+.title-box {
+  background-color: #28a745;
+  padding: 20px; 
+  border-radius: 8px; 
+  text-align: center; 
+  margin: 80px; 
+}
+
+.title-box h1 {
+  color: #ffffff;
+  font-size: 24px; 
+  margin: 0; 
+}
+
+main {
+  margin-left: 80px; 
+  margin-right: 80px;
+}
+
+.subtitle {
+  position: relative;
+  padding-bottom: 10px;
+  margin: 20px 0;
+}
+
+.subtitle::after {
+  content: "";
+  display: block;
+  height: 2px;
+  background-color: #28a745;
+  width: 100%;
+  margin: 0 auto;
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  bottom: 0;
+}
+
+p {
+  margin: 0 0 20px;
+}
+
+.columns {
+  display: flex;
+  flex-wrap: nowrap;
+  gap: 5px;
+}
+
+.column {
+  flex: 1 1 calc(25% - 10px);
+  box-sizing: border-box;
+  padding: 0px;
+  border-radius: 4px;
+}
+
+footer {
+  background-color: #f4f4f4;
+  padding: 10px;
+  text-align: center;
+}
