@@ -5,6 +5,8 @@ import Formulario from "../page/forms/LoginForms";
 import App from "../App";
 import Landing from "../page/landingPage/LandingPage";
 
+const basename = process.env.NODE_ENV === 'production' ? '/desarrollo-frontend-react' : '/';
+
 const routes = createBrowserRouter([
     {
         path: "/",
@@ -28,9 +30,11 @@ const routes = createBrowserRouter([
             }
         ]
     }
-  ]
+  ],
+  {
+    basename: basename,
+    }
 )
-
 
 
 export default routes;
